@@ -1,4 +1,4 @@
-package com.example.jpapractice;
+package com.example.jpapractice.woowa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

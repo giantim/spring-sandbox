@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+ot-gateway:
+  application:
+    internal-api: ot-gateway-internal-api
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 1000
+        readTimeout: 10000
+        errorDecoder: practice.adapter.FeignErrorDecoder
+      routerFeignClient:
+        url: http://localhost:8082

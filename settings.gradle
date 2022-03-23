@@ -1,2 +1,5 @@
 rootProject.name = 'spring-sandbox'
 include 'jpa-practice'
+include 'zuul-practice'
+include 'backend-server'
+

@@ -1,2 +1,5 @@
 rootProject.name = 'spring-sandbox'
 include 'jpa-practice'
+include 'kafka-client'
+include 'kafka-server'
+

@@ -9,6 +9,7 @@ import org.springframework.kafka.config.KafkaListenerContainerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.listener.ContainerProperties;
 import org.springframework.kafka.listener.SeekToCurrentErrorHandler;
+import org.springframework.retry.backoff.FixedBackOffPolicy;
 import org.springframework.retry.policy.SimpleRetryPolicy;
 import org.springframework.retry.support.RetryTemplate;
 import org.springframework.util.backoff.FixedBackOff;
@@ -51,10 +52,14 @@ public class KafkaConsumerConfig {
         exceptionMap.put(NullPointerException.class, true);
         exceptionMap.put(IllegalArgumentException.class, false);
 
-        SimpleRetryPolicy policy = new SimpleRetryPolicy(3, exceptionMap, true);
+        SimpleRetryPolicy retryPolicy = new SimpleRetryPolicy(2, exceptionMap, true);
+
+        FixedBackOffPolicy backOffPolicy = new FixedBackOffPolicy();
+        backOffPolicy.setBackOffPeriod(2000L);
 
         RetryTemplate retryTemplate = new RetryTemplate();
-        retryTemplate.setRetryPolicy(policy);
+        retryTemplate.setRetryPolicy(retryPolicy);
+        retryTemplate.setBackOffPolicy(backOffPolicy);
 
         return retryTemplate;
     }

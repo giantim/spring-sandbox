@@ -17,9 +17,3 @@ spring:
                 BasicBinder: TRACE
 server:
   port: 8085
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: prometheus

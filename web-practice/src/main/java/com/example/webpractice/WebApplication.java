@@ -1,13 +1,12 @@
-package com.example.jpapractice.transactional;
+package com.example.webpractice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyApplication {
+public class WebApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MyApplication.class, args);
+        SpringApplication.run(WebApplication.class, args);
     }
-
 }

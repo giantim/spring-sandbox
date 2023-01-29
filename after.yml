@@ -1,0 +1,38 @@
+woowahan:
+  router:
+    region:
+      exclude:
+        regions: 
+          - code: 88
+            name: 우아한형제도
+          - code: 88888
+            name: 우형시
+          - code: 88888888
+            name: 우형동
+          - code: 98
+            name: USA
+          - code: 98999
+            name: NewYork
+          - code: 98999999
+            name: Manhattan Center
+          - code: 99
+            name: 딜리버리왕국
+          - code: 99999
+            name: 딜리버리시티
+          - code: 99999999
+            name: 딜리동
+  order:
+    bulkCancel:
+      rowCountPerBatchUpdate: 499
+      breakMilliSeconds: 100
+      baeminOneOrderCountPerRequest: 5000
+    orderServer: ot-gateway-order
+
+vdi:
+  whitelist:
+    pathPatterns:
+      - /v1/api/delivery-histories/excel-download # 배달내역 정산 엑셀다운로드
+    subnets:
+      - 172.17.0.0/16
+      - 172.18.0.0/16
+      - 172.27.0.0/16

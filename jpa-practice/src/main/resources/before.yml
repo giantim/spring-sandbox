@@ -1,0 +1,12 @@
+woowahan:
+  delivery:
+    router:
+      router-client:
+        enabled: true
+      dong-code-find:
+        enabled: true
+    coupon:
+      issue:
+        brosEnabled: true
+    request-policy:
+      weighted: 100
